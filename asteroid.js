@@ -2,6 +2,7 @@
 // http://codingtra.in
 // http://patreon.com/codingtrain
 // Code for: https://youtu.be/hacZU523FyM
+let score = 19;
 
 function Asteroid(pos, r) {
   if (pos) {
@@ -12,7 +13,7 @@ function Asteroid(pos, r) {
   if (r) {
     this.r = r * 0.5;
   } else {
-    this.r = random(15, 50);
+    this.r = random(15, 35);
   }
 
   this.vel = p5.Vector.random2D();
@@ -28,8 +29,9 @@ function Asteroid(pos, r) {
 
   this.render = function() {
     push();
-    stroke(255);
-    noFill();
+    strokeWeight(5);
+    stroke(204, 0, 0);
+    fill(128, 128, 128);
     translate(this.pos.x, this.pos.y);
     //ellipse(0, 0, this.r * 2);
     beginShape();
@@ -45,10 +47,33 @@ function Asteroid(pos, r) {
   }
 
   this.breakup = function() {
+
+//     switch (state){
+//       case ('splash'):
+//       // execute splash code
+//       break;
+//     case ('gamePlay'):
+//     // gamePlay code
+//       break;
+//     case ('youWon'):
+//     // youWon code
+//       break;
+//     case ('youLose'):
+//     // youLose code
+//     break;
+//   default:
+//     break;
+//   }
+//
+// }
+
     var newA = [];
     newA[0] = new Asteroid(this.pos, this.r);
     newA[1] = new Asteroid(this.pos, this.r);
     return newA;
+    // if (dist(mouseX, mouseY,)
+    score++;
+    console.log(score);
   }
 
   this.edges = function() {

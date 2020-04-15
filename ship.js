@@ -4,10 +4,10 @@
 // Code for: https://youtu.be/hacZU523FyM
 
 function Ship() {
-  this.pos = createVector(width / 2, height / 2);
-  this.r = 20;
-  this.heading = 0;
-  this.rotation = 0;
+  this.pos = createVector(random(width), random(height));
+  this.r = 80;
+  this.heading = 80;
+  this.rotation = 2;
   this.vel = createVector(0, 0);
   this.isBoosting = false;
 
@@ -42,9 +42,10 @@ function Ship() {
     push();
     translate(this.pos.x, this.pos.y);
     rotate(this.heading + PI / 2);
-    fill(0);
-    stroke(255);
-    triangle(-this.r, this.r, this.r, this.r, 0, -this.r);
+    strokeWeight(4)
+    fill(0, 0, 255);
+    stroke(255, 255, 0);
+    ellipse(100, 46, 55, 100);;
     pop();
   }
 

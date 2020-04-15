@@ -10,13 +10,14 @@ var lasers = [];
 function setup() {
   createCanvas(windowWidth, windowHeight);
   ship = new Ship();
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 7; i++) {
     asteroids.push(new Asteroid());
   }
 }
 
 function draw() {
-  background(0);
+  background(255, 51, 51);
+
 
   for (var i = 0; i < asteroids.length; i++) {
     if (ship.hits(asteroids[i])) {
@@ -70,6 +71,8 @@ function keyPressed() {
   } else if (keyCode == LEFT_ARROW) {
     ship.setRotation(-0.1);
   } else if (keyCode == UP_ARROW) {
+    ship.setRotation(-0.3);
+  } else if (keyCode == DOWN_ARROW) {
     ship.boosting(true);
   }
 }

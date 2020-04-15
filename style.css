@@ -1,7 +1,12 @@
-html, body {
+html {
   margin: 0;
   padding: 0;
 }
+
+body {
+  background-image: url(3DLungs.jpg);
+}
+
 canvas {
   display: block;
 }

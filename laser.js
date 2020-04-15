@@ -11,11 +11,11 @@ function Laser(spos, angle) {
   this.update = function() {
     this.pos.add(this.vel);
   }
-  
+
   this.render = function() {
     push();
-    stroke(255);
-    strokeWeight(4);
+    stroke(128, 255, 0);
+    strokeWeight(15);
     point(this.pos.x, this.pos.y);
     pop();
   }
